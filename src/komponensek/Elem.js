@@ -1,11 +1,12 @@
+import { useContext } from "react";
+import { KivalasztContext } from "../context/KivalasztContext";
+
 export default function Elem(props) {
+    const { kivalaszt } = useContext(KivalasztContext);
 
-    function kivalaszt() {
-        props.kivalaszt(props.ertek)
-       
-
-    }
     return (
-        <div className="bg-light text-secondary p-2" onClick={kivalaszt}>{props.ertek}</div>
+        <div className=" bg-light text-secondary p-2" onClick={() => kivalaszt(props.ertek)}>
+            {props.ertek}
+        </div>
     )
 }
